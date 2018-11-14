@@ -94,7 +94,6 @@ namespace count
                 richTextBox.SelectionBackColor = Color.Yellow;
                 //  count++;
                 index = richTextBox.Text.IndexOf(key, index) + 1;
-
             }
             txtKeys.Text = tmp;
             lbStatus.Text = "Done!";

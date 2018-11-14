@@ -20,7 +20,10 @@ namespace count
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string url = "E:\\IT_MTA\\Nam 3\\Lý thuyết hệ điều hành\\BTL\\BTL-Operating-System-Concepts\\count\\count\\bin\\Debug\\";
+            //string url = "E:\\IT_MTA\\Nam 3\\Lý thuyết hệ điều hành\\BTL\\BTL-Operating-System-Concepts\\count\\count\\bin\\Debug\\";
+            string url = Environment.CurrentDirectory;
+            url=String.Concat(url,"\\");
+            MessageBox.Show(url);
             string key;
             string cmd = txtCmd.Text;
             string[] arr = cmd.Trim().Split(' ');
