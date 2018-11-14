@@ -8,3 +8,13 @@ E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\count\count\count\obj\Debug\
 E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\count\count\count\obj\Debug\count.exe
 E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\count\count\count\obj\Debug\count.pdb
 E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\count\count\count\obj\Debug\count.frmCount.resources
+E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\BTL-Operating-System-Concepts\count\count\bin\Debug\count.exe.config
+E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\BTL-Operating-System-Concepts\count\count\obj\Debug\count.exe
+E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\BTL-Operating-System-Concepts\count\count\obj\Debug\count.pdb
+E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\BTL-Operating-System-Concepts\count\count\bin\Debug\count.exe
+E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\BTL-Operating-System-Concepts\count\count\bin\Debug\count.pdb
+E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\BTL-Operating-System-Concepts\count\count\obj\Debug\count.csprojResolveAssemblyReference.cache
+E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\BTL-Operating-System-Concepts\count\count\obj\Debug\count.frmCount.resources
+E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\BTL-Operating-System-Concepts\count\count\obj\Debug\count.frmMain.resources
+E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\BTL-Operating-System-Concepts\count\count\obj\Debug\count.Properties.Resources.resources
+E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\BTL-Operating-System-Concepts\count\count\obj\Debug\count.csproj.GenerateResource.Cache

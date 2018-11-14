@@ -15,5 +15,11 @@ namespace count
             this.url = url;
             this.key = key;
         }
+        public void myProcess()
+        {
+            frmCount frm = new frmCount(this.key, this.url);
+            frm.ShowDialog();
+        }
+
     }
 }

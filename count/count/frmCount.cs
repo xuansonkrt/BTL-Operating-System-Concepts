@@ -15,6 +15,8 @@ namespace count
     {
         string key;
         string url;
+        string file;
+        string fileText;
         bool isFile = true;
         public frmCount()
         {
@@ -28,9 +30,21 @@ namespace count
             InitializeComponent();
             this.key = key;
             this.url = url;
+            string[] arr = url.Split('\\');
+            file = arr[arr.Length - 1];
+            this.Text = "Count: key=" + key + ";    url=" + file;
             isFile = false;
             txtKeys.Text = key;
-            string fileText = File.ReadAllText(url);
+            
+            try
+            {
+                fileText = File.ReadAllText(url);
+
+            } catch (Exception ex)
+            {
+                MessageBox.Show("File "+ file + " không tồn tại!");
+                //this.Close();
+            }
             richTextBox.Text = fileText;
         }
 
@@ -76,18 +90,15 @@ namespace count
             //hight light
             while (index < richTextBox.Text.LastIndexOf(key))
             {
-                //searches the text in a richTextBox control for a string within a rangr of text withing the content 
                 richTextBox.Find(key, index, richTextBox.TextLength, RichTextBoxFinds.None);
-                //select color. this is added auto when a match is found
                 richTextBox.SelectionBackColor = Color.Yellow;
                 //  count++;
-                // after a match is found the index is increased so the search won't stop at the same
                 index = richTextBox.Text.IndexOf(key, index) + 1;
 
             }
             txtKeys.Text = tmp;
             lbStatus.Text = "Done!";
-
+            this.Text= "Count: key=" + key + ";    url=" + file+";   Count=" + count.ToString();
             // lbResult.Text = count.ToString();
         }
 

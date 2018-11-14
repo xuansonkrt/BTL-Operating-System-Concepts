@@ -29,17 +29,21 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCmd = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnOpenFile = new System.Windows.Forms.Button();
+            this.txtCmd = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dlOpenFile = new System.Windows.Forms.OpenFileDialog();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnOpenFile);
             this.groupBox1.Controls.Add(this.btnSubmit);
             this.groupBox1.Controls.Add(this.txtCmd);
             this.groupBox1.Controls.Add(this.label1);
@@ -49,26 +53,6 @@
             this.groupBox1.Size = new System.Drawing.Size(820, 132);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Command";
-            // 
-            // txtCmd
-            // 
-            this.txtCmd.Location = new System.Drawing.Point(119, 22);
-            this.txtCmd.Multiline = true;
-            this.txtCmd.Name = "txtCmd";
-            this.txtCmd.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtCmd.Size = new System.Drawing.Size(516, 83);
-            this.txtCmd.TabIndex = 1;
-            this.txtCmd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCmd_KeyDown);
             // 
             // btnSubmit
             // 
@@ -81,32 +65,110 @@
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // btnOpenFile
+            // txtCmd
             // 
-            this.btnOpenFile.BackColor = System.Drawing.Color.Gold;
-            this.btnOpenFile.Location = new System.Drawing.Point(656, 68);
-            this.btnOpenFile.Name = "btnOpenFile";
-            this.btnOpenFile.Size = new System.Drawing.Size(139, 37);
-            this.btnOpenFile.TabIndex = 3;
-            this.btnOpenFile.Text = "Open file";
-            this.btnOpenFile.UseVisualStyleBackColor = false;
+            this.txtCmd.Location = new System.Drawing.Point(119, 22);
+            this.txtCmd.Multiline = true;
+            this.txtCmd.Name = "txtCmd";
+            this.txtCmd.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtCmd.Size = new System.Drawing.Size(516, 83);
+            this.txtCmd.TabIndex = 1;
+            this.txtCmd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCmd_KeyDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Command";
             // 
             // dlOpenFile
             // 
             this.dlOpenFile.FileName = "openFileDialog1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(324, 150);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(175, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "BÀI TẬP MÔN HỌC";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(248, 180);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(358, 26);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "“LÝ THUYẾT HỆ ĐIỀU HÀNH”";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(221, 215);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(385, 23);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "“Operating System Concepts” - Silberschatz";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(249, 262);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(343, 19);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Giáo viên hướng dẫn: GVC. TS. Hà Chí Trung";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(260, 283);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(306, 19);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Sinh viên thực hiện: Nguyễn Quang Vĩnh";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(429, 302);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(137, 19);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Nguyễn Xuân Sơn";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 446);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Count";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -116,7 +178,12 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.TextBox txtCmd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnOpenFile;
         private System.Windows.Forms.OpenFileDialog dlOpenFile;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
