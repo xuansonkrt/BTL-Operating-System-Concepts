@@ -39,6 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnTutorio = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,8 @@
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubmit.Location = new System.Drawing.Point(656, 22);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(139, 37);
@@ -149,11 +152,22 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Nguyễn Xuân Sơn";
             // 
+            // btnTutorio
+            // 
+            this.btnTutorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTutorio.Location = new System.Drawing.Point(13, 399);
+            this.btnTutorio.Name = "btnTutorio";
+            this.btnTutorio.Size = new System.Drawing.Size(120, 35);
+            this.btnTutorio.TabIndex = 7;
+            this.btnTutorio.Text = "Tutorio";
+            this.btnTutorio.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 446);
+            this.Controls.Add(this.btnTutorio);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -185,5 +199,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnTutorio;
     }
 }

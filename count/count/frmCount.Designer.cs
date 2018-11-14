@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbStatus = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lbResult = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnOpenFile = new System.Windows.Forms.Button();
@@ -36,8 +38,6 @@
             this.txtKeys = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbStatus = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,27 @@
             this.groupBox1.Size = new System.Drawing.Size(697, 117);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatus.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbStatus.Location = new System.Drawing.Point(499, 80);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(56, 18);
+            this.lbStatus.TabIndex = 7;
+            this.lbStatus.Text = "Status";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(443, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Status:";
             // 
             // lbResult
             // 
@@ -127,27 +148,6 @@
             this.richTextBox.TabIndex = 1;
             this.richTextBox.Text = "";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(443, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Status:";
-            // 
-            // lbStatus
-            // 
-            this.lbStatus.AutoSize = true;
-            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatus.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lbStatus.Location = new System.Drawing.Point(499, 80);
-            this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(56, 18);
-            this.lbStatus.TabIndex = 7;
-            this.lbStatus.Text = "Status";
-            // 
             // frmCount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -158,6 +158,7 @@
             this.Name = "frmCount";
             this.Text = "Đếm";
             this.Load += new System.EventHandler(this.frmCount_Load);
+            this.Shown += new System.EventHandler(this.frmCount_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -36,7 +36,6 @@ namespace count
             {
                 MessageBox.Show("Nhập sai cú pháp");
                 return;
-
             }
             
             //url = String.Concat(url, arr[2]);
@@ -50,6 +49,7 @@ namespace count
                 tmp = String.Concat(tmp, arr[i]);
                 myThread proc = new myThread(key, tmp);
                 Thread thr = new Thread(proc.myProcess);
+                thr.SetApartmentState(ApartmentState.STA);
                 thr.Start();
             }
             

@@ -35,7 +35,8 @@ namespace count
             this.Text = "Count: key=" + key + ";    url=" + file;
             isFile = false;
             txtKeys.Text = key;
-            
+            lbStatus.Text = "Counting...";
+
             try
             {
                 fileText = File.ReadAllText(url);
@@ -65,11 +66,13 @@ namespace count
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            lbStatus.Text = "Counting...";
+            MessageBox.Show("counting");
             Count();
         }
         private void Count()
         {
-            lbStatus.Text = "Counting...";
+            
             int index = 0;
             int count = 0;
             string tmp = txtKeys.Text;
@@ -118,6 +121,12 @@ namespace count
         private void frmCount_Load(object sender, EventArgs e)
         {
           //  Search();   
+        }
+
+        private void frmCount_Shown(object sender, EventArgs e)
+        {
+            lbStatus.Text = "Counting...";
+            Count();
         }
     }
 }
