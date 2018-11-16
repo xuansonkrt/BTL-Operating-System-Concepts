@@ -44,6 +44,7 @@ namespace count
             } catch (Exception ex)
             {
                 MessageBox.Show("File "+ file + " không tồn tại!");
+                fileText = "";
                 //this.Close();
             }
             richTextBox.Text = fileText;
@@ -67,7 +68,7 @@ namespace count
         private void btnSearch_Click(object sender, EventArgs e)
         {
             lbStatus.Text = "Counting...";
-            MessageBox.Show("counting");
+            //MessageBox.Show("counting");
             Count();
         }
         private void Count()
@@ -125,8 +126,12 @@ namespace count
 
         private void frmCount_Shown(object sender, EventArgs e)
         {
+            
+            //Count();
+            if (fileText == "")
+                this.Close();
             lbStatus.Text = "Counting...";
-            Count();
+            btnSearch_Click(sender, e);
         }
     }
 }

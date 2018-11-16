@@ -38,7 +38,9 @@
             this.txtKeys = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -141,26 +143,37 @@
             // 
             // richTextBox
             // 
-            this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox.Location = new System.Drawing.Point(0, 117);
+            this.richTextBox.Location = new System.Drawing.Point(12, 123);
             this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(697, 304);
+            this.richTextBox.Size = new System.Drawing.Size(673, 286);
             this.richTextBox.TabIndex = 1;
             this.richTextBox.Text = "";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.richTextBox);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(697, 421);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
             // 
             // frmCount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(697, 421);
-            this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
+            this.MaximizeBox = false;
             this.Name = "frmCount";
             this.Text = "Đếm";
             this.Load += new System.EventHandler(this.frmCount_Load);
             this.Shown += new System.EventHandler(this.frmCount_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -177,5 +190,6 @@
         private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
