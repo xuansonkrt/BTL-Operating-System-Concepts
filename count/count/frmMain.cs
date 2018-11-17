@@ -27,7 +27,8 @@ namespace count
             string key;
             string cmd = txtCmd.Text;
             string[] arr = cmd.Trim().Split(' ');
-            if(arr[0].Equals("count")==false)
+            string method = arr[0].ToUpper();
+            if(method.Equals("COUNT") == false)
             {
                 MessageBox.Show("Nhập sai cú pháp");
                 return;

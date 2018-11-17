@@ -125,9 +125,8 @@
             // txtKeys
             // 
             this.txtKeys.Location = new System.Drawing.Point(55, 22);
-            this.txtKeys.Multiline = true;
             this.txtKeys.Name = "txtKeys";
-            this.txtKeys.Size = new System.Drawing.Size(368, 34);
+            this.txtKeys.Size = new System.Drawing.Size(368, 22);
             this.txtKeys.TabIndex = 1;
             this.txtKeys.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKeys_KeyDown);
             // 

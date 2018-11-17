@@ -16,8 +16,7 @@ namespace count
         string key;
         string url;
         string file;
-        string fileText;
-        bool isFile = true;
+        string fileText; // nội dung file
         public frmCount()
         {
             InitializeComponent();
@@ -33,15 +32,11 @@ namespace count
             string[] arr = url.Split('\\');
             file = arr[arr.Length - 1];
             this.Text = "Count: key=" + key + ";    url=" + file;
-            isFile = false;
             txtKeys.Text = key;
-            lbStatus.Text = "Counting...";
-
             try
             {
                 fileText = File.ReadAllText(url);
-
-            } catch (Exception ex)
+            } catch
             {
                 MessageBox.Show("File "+ file + " không tồn tại!");
                 fileText = "";
@@ -49,7 +44,6 @@ namespace count
             }
             richTextBox.Text = fileText;
         }
-
         private void btnOpenFile_Click(object sender, EventArgs e)
         {
             Stream myStream;
@@ -59,7 +53,7 @@ namespace count
                 if ((myStream = openFile.OpenFile()) != null)
                 {
                     url = openFile.FileName;
-                    string fileText = File.ReadAllText(url);
+                    fileText = File.ReadAllText(url);
                     richTextBox.Text = fileText;
                 }
             }
@@ -68,69 +62,73 @@ namespace count
         private void btnSearch_Click(object sender, EventArgs e)
         {
             lbStatus.Text = "Counting...";
-            //MessageBox.Show("counting");
+            Application.DoEvents();
             Count();
         }
         private void Count()
         {
-            
-            int index = 0;
             int count = 0;
-            string tmp = txtKeys.Text;
             key = txtKeys.Text;
             String temp = richTextBox.Text;
-            richTextBox.Text = "";
+            richTextBox.Text = ""; // cập nhật lại text khi tìm từ khác
             richTextBox.Text = temp;
             //count
             int strt = 0; //vị trí trước đó có xuất hiện chuỗi
             int idx = -1; // 
+            int len = key.Length;
+            temp = temp.ToUpper();
+            string tmpKey = key.ToUpper();
+            RichTextBox rtb = new RichTextBox();
             while (strt != -1)
             {
-                strt = temp.IndexOf(key, idx + 1);
-                count += 1;
-                idx = strt;
+                strt = temp.IndexOf(tmpKey, idx + 1);
+                if(strt!=-1)
+                {
+                    count += 1;
+                    idx = strt;
+                    //hight light
+                    richTextBox.Select(strt, len);
+                    richTextBox.SelectionBackColor = Color.Yellow;
+                }
                 lbResult.Text = count.ToString();
             }
             //hight light
-            while (index < richTextBox.Text.LastIndexOf(key))
+      /*      while (index < richTextBox.Text.LastIndexOf(key))
             {
                 richTextBox.Find(key, index, richTextBox.TextLength, RichTextBoxFinds.None);
                 richTextBox.SelectionBackColor = Color.Yellow;
                 //  count++;
                 index = richTextBox.Text.IndexOf(key, index) + 1;
-            }
-            txtKeys.Text = tmp;
+            }*/
+            txtKeys.Text = key;
             lbStatus.Text = "Done!";
+
             this.Text= "Count: key=" + key + ";    url=" + file+";   Count=" + count.ToString();
-            // lbResult.Text = count.ToString();
+            txtKeys.Select(0, len);
         }
 
 
         private void txtKeys_KeyDown(object sender, KeyEventArgs e)
         {
-            string tmp = txtKeys.Text;
-
+            //key = txtKeys.Text;
             if (e.KeyCode == Keys.Enter)
             {
                 btnSearch_Click(sender, e);
             }
-            txtKeys.Text = tmp;
-
-
         }
 
         private void frmCount_Load(object sender, EventArgs e)
         {
-          //  Search();   
+          //  
         }
 
         private void frmCount_Shown(object sender, EventArgs e)
         {
-            
+            lbStatus.Text = "Counting...";
+            Application.DoEvents();
             //Count();
             if (fileText == "")
                 this.Close();
-            lbStatus.Text = "Counting...";
             btnSearch_Click(sender, e);
         }
     }
