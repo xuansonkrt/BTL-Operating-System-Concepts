@@ -62,6 +62,7 @@ namespace count
         private void btnSearch_Click(object sender, EventArgs e)
         {
             lbStatus.Text = "Counting...";
+            lbResult.Text = "0";
             Application.DoEvents();
             Count();
         }
