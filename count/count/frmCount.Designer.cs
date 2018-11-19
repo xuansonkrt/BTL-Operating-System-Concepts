@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -158,6 +159,10 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
             // frmCount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -168,6 +173,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCount";
             this.Text = "Đếm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCount_FormClosed);
             this.Load += new System.EventHandler(this.frmCount_Load);
             this.Shown += new System.EventHandler(this.frmCount_Shown);
             this.groupBox1.ResumeLayout(false);
@@ -190,5 +196,6 @@
         private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
