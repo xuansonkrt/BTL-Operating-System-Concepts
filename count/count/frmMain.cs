@@ -20,15 +20,13 @@ namespace count
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //string url = "E:\\IT_MTA\\Nam 3\\Lý thuyết hệ điều hành\\BTL\\BTL-Operating-System-Concepts\\count\\count\\bin\\Debug\\";
-            string url = Environment.CurrentDirectory;
+            string url = Environment.CurrentDirectory; // lấy đường dẫn của thư mục chứa file thực thi
             url=String.Concat(url,"\\");
-           // MessageBox.Show(url);
             string key;
             string cmd = txtCmd.Text;
-            string[] arr = cmd.Trim().Split(' ');
+            string[] arr = cmd.Trim().Split(' ');//tách các thành phần của câu lệnh
             string method = arr[0].ToUpper();
-            if(method.Equals("COUNT") == false)
+            if(method.Equals("COUNT") == false) // kiểm tra cú pháp
             {
                 MessageBox.Show("Nhập sai cú pháp");
                 return;
@@ -38,22 +36,16 @@ namespace count
                 MessageBox.Show("Nhập sai cú pháp");
                 return;
             }
-            
-            //url = String.Concat(url, arr[2]);
             key = arr[1];
-            //frmCount frm = new frmCount(arr[1],url);
-            //frm.ShowDialog();
-            // MessageBox.Show(arr.Length.ToString());
-            for (int i = 2; i < arr.Length; i++)
+            for (int i = 2; i < arr.Length; i++)// với mỗi file có 1 tiến trình sử lý được hiển thị trên 1 form
             {
                 string tmp = url;
                 tmp = String.Concat(tmp, arr[i]);
                 myThread proc = new myThread(key, tmp);
                 Thread thr = new Thread(proc.myProcess);
-                thr.SetApartmentState(ApartmentState.STA);
+                thr.SetApartmentState(ApartmentState.STA); //
                 thr.Start();
             }
-            
         }
         
         private void txtCmd_KeyDown(object sender, KeyEventArgs e) // thực thi khi nhấn enter trong text box

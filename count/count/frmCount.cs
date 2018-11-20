@@ -21,9 +21,6 @@ namespace count
         public frmCount()
         {
             InitializeComponent();
-            //url = @"E:\IT_MTA\Nam 3\Lý thuyết hệ điều hành\BTL\count\count\count\bin\Debug\file1.txt";
-            //string fileText = File.ReadAllText(url);
-            //richTextBox.Text = fileText;
         }
         public frmCount(string key,string url)
         {
@@ -32,39 +29,23 @@ namespace count
             this.url = url;
             this.Text = "Count: key=" + key + ";    url=" + file;
             txtKeys.Text = key;
-
-            
-
-            // richTextBox.Text = readFile(url);
         }
         private void btnOpenFile_Click(object sender, EventArgs e)
         {
-          //  if (stream != null)
-            //    stream.Close();
+            if (stream != null)
+                stream.Close();
+            openFileDialog.FileName = "";
             openFileDialog.ShowDialog();
             url = openFileDialog.FileName;
-            if (IsFileOpened(url))
-            {
-                MessageBox.Show("File " + fileName(url) + " đang được mở.");
-                lbStatus.Text = "Waiting...";
-                this.Text = "Count: key=" + key + ";    file=" + fileName(url);
-                lbResult.Text = "0";
-                richTextBox.Text = "";
-                Application.DoEvents();
-                while (IsFileOpened(url))
-                {
-                    // không làm gì
-                    // chờ tài nguyên được giải phóng
-                }
-            }
-            // else
+            if (url == "")
+                return;
+            Wait(url);
             lbStatus.Text = "Opened";
+            richTextBox.Text = readFile(url);
             Application.DoEvents();
             this.Text = "Count: key=" + key + ";    file=" + fileName(url);
             lbResult.Text = "0";
-            richTextBox.Text = readFile(url);
-}
-
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             lbStatus.Text = "Counting...";
@@ -80,13 +61,11 @@ namespace count
             String temp = richTextBox.Text;
             richTextBox.Text = ""; // cập nhật lại text khi tìm từ khác
             richTextBox.Text = temp;
-            //count
-            int strt = 0; //vị trí trước đó có xuất hiện chuỗi
-            int idx = -1; // 
+            int strt = 0; //vị trí xuất hiện chuỗi
+            int idx = -1; //vị trí trước đó có xuất hiện chuỗi
             int len = key.Length;
             temp = temp.ToUpper();
             string tmpKey = key.ToUpper();
-            RichTextBox rtb = new RichTextBox();
             while (strt != -1)
             {
                 strt = temp.IndexOf(tmpKey, idx + 1);
@@ -94,47 +73,49 @@ namespace count
                 {
                     count += 1;
                     idx = strt;
-                    //hight light
+                    //hightlight chuỗi tìm thấy
                     richTextBox.Select(strt, len);
                     richTextBox.SelectionBackColor = Color.Yellow;
                 }
                 lbResult.Text = count.ToString();
             }
-            //hight light
-      /*      while (index < richTextBox.Text.LastIndexOf(key))
-            {
-                richTextBox.Find(key, index, richTextBox.TextLength, RichTextBoxFinds.None);
-                richTextBox.SelectionBackColor = Color.Yellow;
-                //  count++;
-                index = richTextBox.Text.IndexOf(key, index) + 1;
-            }*/
             txtKeys.Text = key;
             lbStatus.Text = "Done!";
-
             this.Text= "Count: key=" + key + ";    file=" + fileName(url)+";   Count=" + count.ToString();
             txtKeys.Select(0, len);
         }
-
-
         private void txtKeys_KeyDown(object sender, KeyEventArgs e)
         {
-            //key = txtKeys.Text;
             if (e.KeyCode == Keys.Enter) // khi xảy ra sự kiện enter trong text box thì gọi tới method btnSearch_Click
             {
                 btnSearch_Click(sender, e);
             }
         }
-
-        private void frmCount_Load(object sender, EventArgs e)
-        {
-          //  
-        }
-
         private void frmCount_Shown(object sender, EventArgs e)
+        {
+            if (!File.Exists(url))
+            {
+                MessageBox.Show("File "+fileName(url)+" không tồn tại");
+                this.Dispose();
+                return;
+            }
+            Wait(url);
+            lbStatus.Text = "Opened";
+            Application.DoEvents();
+            this.Text = "Count: key=" + key + ";    file=" + fileName(url);
+            lbResult.Text = "0";
+            richTextBox.Text = readFile(url);
+            lbStatus.Text = "Counting...";
+            Application.DoEvents();
+            if (fileText == "")
+                this.Close();
+            btnSearch_Click(sender, e);
+        }
+        public void Wait(string url)
         {
             if (IsFileOpened(url))
             {
-                MessageBox.Show("File " + fileName(url) + " đang được mở.");
+                MessageBox.Show("File " + fileName(url) + " đang được mở."); // đưa ra thông báo chờ
                 lbStatus.Text = "Waiting...";
                 this.Text = "Count: key=" + key + ";    file=" + fileName(url);
                 lbResult.Text = "0";
@@ -146,19 +127,6 @@ namespace count
                     // chờ tài nguyên được giải phóng
                 }
             }
-            // else
-            lbStatus.Text = "Opened";
-            Application.DoEvents();
-            this.Text = "Count: key=" + key + ";    file=" + fileName(url);
-            lbResult.Text = "0";
-            richTextBox.Text = readFile(url);
-
-            lbStatus.Text = "Counting...";
-            Application.DoEvents();
-            //Count();
-            if (fileText == "")
-                this.Close();
-            btnSearch_Click(sender, e);
         }
         public string fileName(string url) // trả về tên của file
         {
@@ -198,7 +166,6 @@ namespace count
                 if (fstream != null)
                     fstream.Close();
             }
-            
             return false;
         }
 

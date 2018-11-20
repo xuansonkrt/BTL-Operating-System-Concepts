@@ -161,7 +161,7 @@
             // 
             // openFileDialog
             // 
-            this.openFileDialog.FileName = "openFileDialog1";
+            this.openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             // 
             // frmCount
             // 
@@ -174,7 +174,6 @@
             this.Name = "frmCount";
             this.Text = "Đếm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCount_FormClosed);
-            this.Load += new System.EventHandler(this.frmCount_Load);
             this.Shown += new System.EventHandler(this.frmCount_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
