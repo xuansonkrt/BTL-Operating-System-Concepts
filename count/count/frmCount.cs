@@ -16,6 +16,7 @@ namespace count
         string key;
         string url;
         string file;
+        int dem;
         string fileText; // nội dung file
         FileStream stream;
         public frmCount()
@@ -83,6 +84,13 @@ namespace count
             lbStatus.Text = "Done!";
             this.Text= "Count: key=" + key + ";    file=" + fileName(url)+";   Count=" + count.ToString();
             txtKeys.Select(0, len);
+            this.dem = count;
+            frmMain.result += count;
+           // frmMain.lbResult.Text = frmMain.result;
+        }
+        public int KetQua()
+        {
+            return dem;
         }
         private void txtKeys_KeyDown(object sender, KeyEventArgs e)
         {

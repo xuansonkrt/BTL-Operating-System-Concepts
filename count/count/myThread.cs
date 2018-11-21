@@ -10,6 +10,7 @@ namespace count
     {
         string url;
         string key;
+        int result;
         public myThread(string key, string url)
         {
             this.url = url;
@@ -19,6 +20,7 @@ namespace count
         {
             frmCount frm = new frmCount(this.key, this.url);
             frm.ShowDialog();
+          //  frmMain.result += frm.KetQua();
         }
     }
 
